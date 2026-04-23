@@ -6,10 +6,18 @@ import { ScratchCard } from "@/components/ScratchCard";
 import { Events } from "@/components/Events";
 import { PetalRain } from "@/components/PetalRain";
 import { MusicToggle } from "@/components/MusicToggle";
+import { GuestWishes } from "@/components/GuestWishes";
 import { wedding } from "@/config/wedding";
+import { subtleConfetti } from "@/lib/confetti";
 
 const Index = () => {
   const [opened, setOpened] = useState(false);
+
+  const handleOpen = () => {
+    setOpened(true);
+    // gentle confetti when envelope opens
+    setTimeout(() => subtleConfetti(), 400);
+  };
 
   return (
     <main className="relative min-h-screen">
@@ -20,7 +28,7 @@ const Index = () => {
             exit={{ opacity: 0, scale: 1.1 }}
             transition={{ duration: 0.8 }}
           >
-            <Envelope onOpen={() => setOpened(true)} />
+            <Envelope onOpen={handleOpen} />
           </motion.div>
         ) : (
           <motion.div
@@ -29,10 +37,12 @@ const Index = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
           >
-            <PetalRain count={20} />
+            {/* Petals burst on open, then rest scattered & interactive */}
+            <PetalRain burst scattered={24} />
             <MainReveal />
             <ScratchCard />
             <Events />
+            <GuestWishes />
           </motion.div>
         )}
       </AnimatePresence>
@@ -41,7 +51,7 @@ const Index = () => {
 
       {/* SEO h1 fallback for screen readers */}
       <h1 className="sr-only">
-        {wedding.bride} & {wedding.groom} Wedding Invitation — {wedding.mainDate}
+        {wedding.bride} &amp; {wedding.groom} Wedding Invitation — {wedding.mainDate}
       </h1>
     </main>
   );

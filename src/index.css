@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Cinzel:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Cinzel:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,51 +6,52 @@
 
 @layer base {
   :root {
-    /* Base */
+    /* Base — warm ivory background, deep readable text */
     --background: 36 50% 96%;
-    --foreground: 0 45% 18%;
+    --foreground: 0 55% 14%;             /* deep maroon-charcoal for body */
 
     --card: 35 55% 97%;
-    --card-foreground: 0 45% 18%;
+    --card-foreground: 0 55% 14%;
 
     --popover: 35 55% 97%;
-    --popover-foreground: 0 45% 18%;
+    --popover-foreground: 0 55% 14%;
 
     /* Royal palette */
-    --primary: 0 65% 28%;            /* deep maroon */
-    --primary-foreground: 40 60% 95%;
+    --primary: 0 65% 26%;
+    --primary-foreground: 40 60% 96%;
 
-    --secondary: 18 70% 85%;          /* peach */
-    --secondary-foreground: 0 45% 18%;
+    --secondary: 18 70% 85%;
+    --secondary-foreground: 0 55% 14%;
 
     --muted: 35 40% 90%;
-    --muted-foreground: 0 20% 35%;
+    --muted-foreground: 0 30% 28%;
 
-    --accent: 43 70% 52%;             /* gold */
-    --accent-foreground: 0 45% 18%;
+    --accent: 43 70% 48%;
+    --accent-foreground: 0 55% 14%;
 
     --destructive: 0 84% 50%;
-    --destructive-foreground: 40 60% 95%;
+    --destructive-foreground: 40 60% 96%;
 
-    --border: 43 50% 75%;
-    --input: 43 50% 75%;
-    --ring: 43 70% 52%;
+    --border: 43 50% 70%;
+    --input: 43 40% 80%;
+    --ring: 43 70% 48%;
 
     /* Wedding-specific tokens */
-    --gold: 43 75% 55%;
-    --gold-light: 45 85% 75%;
-    --gold-dark: 38 70% 38%;
-    --maroon: 0 70% 25%;
-    --maroon-deep: 0 75% 18%;
+    --gold: 43 75% 48%;                  /* deeper gold for better contrast */
+    --gold-light: 45 85% 70%;
+    --gold-dark: 38 75% 32%;
+    --maroon: 0 70% 22%;
+    --maroon-deep: 0 78% 14%;            /* primary text color */
+    --ink: 20 35% 18%;                   /* rich brown alternative */
     --blush: 12 75% 88%;
     --peach: 22 80% 85%;
     --ivory: 40 60% 96%;
-    --emerald: 158 50% 35%;
+    --emerald: 158 50% 30%;
 
     /* Gradients */
     --gradient-royal: linear-gradient(135deg, hsl(var(--maroon-deep)) 0%, hsl(var(--maroon)) 50%, hsl(var(--gold-dark)) 100%);
     --gradient-gold: linear-gradient(135deg, hsl(var(--gold-light)) 0%, hsl(var(--gold)) 50%, hsl(var(--gold-dark)) 100%);
-    --gradient-gold-shimmer: linear-gradient(110deg, hsl(var(--gold-dark)) 0%, hsl(var(--gold-light)) 35%, hsl(45 95% 90%) 50%, hsl(var(--gold-light)) 65%, hsl(var(--gold-dark)) 100%);
+    --gradient-gold-shimmer: linear-gradient(110deg, hsl(var(--gold-dark)) 0%, hsl(var(--gold)) 35%, hsl(45 90% 75%) 50%, hsl(var(--gold)) 65%, hsl(var(--gold-dark)) 100%);
     --gradient-bg: radial-gradient(ellipse at top, hsl(var(--peach)) 0%, hsl(var(--blush)) 35%, hsl(var(--ivory)) 100%);
     --gradient-envelope: linear-gradient(160deg, hsl(0 65% 32%) 0%, hsl(0 70% 22%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--ivory)) 0%, hsl(var(--peach) / 0.4) 100%);
@@ -61,7 +62,6 @@
     --shadow-soft: 0 8px 30px -10px hsl(var(--maroon) / 0.2);
     --glow-gold: 0 0 30px hsl(var(--gold) / 0.6);
 
-    /* Transitions */
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
     --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
@@ -85,6 +85,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
     background: var(--gradient-bg);
     background-attachment: fixed;
     overflow-x: hidden;
@@ -92,18 +93,18 @@
   h1, h2, h3 {
     font-family: 'Cinzel', serif;
   }
+  p {
+    color: hsl(var(--maroon-deep));
+  }
 }
 
 @layer utilities {
-  .font-script {
-    font-family: 'Great Vibes', cursive;
-  }
-  .font-display {
-    font-family: 'Cinzel', serif;
-  }
-  .font-body {
-    font-family: 'Cormorant Garamond', serif;
-  }
+  .font-script { font-family: 'Great Vibes', cursive; }
+  .font-display { font-family: 'Cinzel', serif; }
+  .font-body { font-family: 'Cormorant Garamond', serif; }
+
+  .text-ink { color: hsl(var(--maroon-deep)); }
+  .text-ink-soft { color: hsl(var(--ink)); }
 
   .text-gold-gradient {
     background: var(--gradient-gold-shimmer);
@@ -112,6 +113,8 @@
     background-clip: text;
     color: transparent;
     animation: shimmer 4s linear infinite;
+    /* Fallback for accessibility */
+    text-shadow: 0 1px 0 hsl(var(--gold-dark) / 0.15);
   }
 
   .text-royal-gradient {
@@ -125,46 +128,28 @@
     background-image: url('/src/assets/mandala-pattern.png');
     background-size: 600px;
     background-repeat: repeat;
-    opacity: 0.08;
+    opacity: 0.06;
   }
 
-  .glow-gold {
-    box-shadow: var(--glow-gold);
-  }
-
-  .shadow-royal {
-    box-shadow: var(--shadow-royal);
-  }
-
-  .shadow-gold {
-    box-shadow: var(--shadow-gold);
-  }
-
-  .border-gold {
-    border-color: hsl(var(--gold));
-  }
+  .glow-gold { box-shadow: var(--glow-gold); }
+  .shadow-royal { box-shadow: var(--shadow-royal); }
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+  .border-gold { border-color: hsl(var(--gold)); }
 
   .gold-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--gold-dark)), transparent);
+  }
+
+  .section-eyebrow {
+    @apply font-display tracking-[0.4em] text-xs;
+    color: hsl(var(--maroon-deep));
   }
 }
 
 @keyframes shimmer {
   0% { background-position: 0% center; }
   100% { background-position: 200% center; }
-}
-
-@keyframes float-particle {
-  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.4; }
-  50% { transform: translateY(-30px) translateX(15px); opacity: 1; }
-}
-
-@keyframes petal-fall {
-  0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateY(110vh) translateX(var(--drift, 100px)) rotate(720deg); opacity: 0; }
 }
 
 @keyframes glow-pulse {
@@ -174,8 +159,4 @@
 
 .animate-glow-pulse {
   animation: glow-pulse 2.5s ease-in-out infinite;
-}
-
-.animate-float-particle {
-  animation: float-particle 6s ease-in-out infinite;
 }
