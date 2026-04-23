@@ -5,11 +5,11 @@ export const wedding = {
   brideParents: "D/o Nisha & Kalpesh Shah",
   groomParents: "S/o Nisha & Kalpesh Shah",
   poeticLine: "Two souls, one journey — woven in love, blessed by tradition.",
-  mainDate: "25th June 2026",
-  // Date parts for the three-circle scratch reveal
+  mainDate: "25/06/2026",
+  // Date parts for the three-circle tap-to-reveal
   dateParts: {
     day: "25",
-    month: "JUN",
+    month: "06",
     year: "2026",
   },
   hashtag: "#DhritiWedsMonil",

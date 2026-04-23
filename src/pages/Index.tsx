@@ -2,9 +2,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Envelope } from "@/components/Envelope";
 import { MainReveal } from "@/components/MainReveal";
-import { ScratchCard } from "@/components/ScratchCard";
+import { TapReveal } from "@/components/TapReveal";
 import { Events } from "@/components/Events";
-import { PetalRain } from "@/components/PetalRain";
 import { MusicToggle } from "@/components/MusicToggle";
 import { GuestWishes } from "@/components/GuestWishes";
 import { wedding } from "@/config/wedding";
@@ -37,10 +36,9 @@ const Index = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
           >
-            {/* Petals burst on open, then rest scattered & interactive */}
-            <PetalRain burst scattered={24} />
-            <MainReveal />
-            <ScratchCard />
+            {/* Petals burst on landing/main reveal only */}
+            <MainReveal showPetals />
+            <TapReveal />
             <Events />
             <GuestWishes />
           </motion.div>

@@ -76,11 +76,11 @@ export const Envelope = ({ onOpen }: Props) => {
             <div className="absolute inset-0 bg-mandala opacity-30" />
           </motion.div>
 
-          {/* Wax seal */}
+          {/* Wax seal — sits where the flap tip meets the envelope body */}
           <motion.img
             src={waxSeal}
             alt="D & M monogram seal"
-            className="absolute left-1/2 top-1/2 w-24 h-24 sm:w-28 sm:h-28 -translate-x-1/2 -translate-y-1/2 z-20 drop-shadow-[0_8px_20px_hsl(var(--maroon-deep)/0.6)]"
+            className="absolute left-1/2 top-[60%] w-24 h-24 sm:w-28 sm:h-28 -translate-x-1/2 -translate-y-1/2 z-20 drop-shadow-[0_8px_20px_hsl(var(--maroon-deep)/0.6)]"
             animate={opened ? { scale: 0, opacity: 0, rotate: 180 } : { scale: [1, 1.05, 1] }}
             transition={opened ? { duration: 0.6 } : { duration: 3, repeat: Infinity }}
           />

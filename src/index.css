@@ -39,10 +39,10 @@
     /* Wedding-specific tokens */
     --gold: 43 75% 48%;                  /* deeper gold for better contrast */
     --gold-light: 45 85% 70%;
-    --gold-dark: 38 75% 32%;
-    --maroon: 0 70% 22%;
-    --maroon-deep: 0 78% 14%;            /* primary text color */
-    --ink: 20 35% 18%;                   /* rich brown alternative */
+    --gold-dark: 35 80% 26%;             /* darker gold for readable accents */
+    --maroon: 0 75% 18%;
+    --maroon-deep: 0 85% 10%;            /* primary text — near-black maroon */
+    --ink: 18 45% 12%;                   /* deep rich brown */
     --blush: 12 75% 88%;
     --peach: 22 80% 85%;
     --ivory: 40 60% 96%;

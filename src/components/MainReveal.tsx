@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
 import { wedding } from "@/config/wedding";
 import brideGroom from "@/assets/bride-groom.png";
+import { PetalRain } from "./PetalRain";
 
-export const MainReveal = () => {
+interface Props {
+  showPetals?: boolean;
+}
+
+export const MainReveal = ({ showPetals = false }: Props) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
       <div className="absolute inset-0 bg-mandala" />
+      {showPetals && <PetalRain burst scattered={22} />}
 
       <div className="relative max-w-4xl mx-auto text-center">
         <motion.p
@@ -37,7 +43,7 @@ export const MainReveal = () => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.9 }}
-          className="mt-2 font-display tracking-[0.25em] text-[11px] sm:text-xs text-ink-soft"
+          className="mt-3 font-display tracking-[0.25em] text-xs sm:text-sm text-maroon-deep font-semibold"
         >
           {wedding.brideParents}
         </motion.p>
@@ -67,7 +73,7 @@ export const MainReveal = () => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.9 }}
-          className="mt-2 font-display tracking-[0.25em] text-[11px] sm:text-xs text-ink-soft"
+          className="mt-3 font-display tracking-[0.25em] text-xs sm:text-sm text-maroon-deep font-semibold"
         >
           {wedding.groomParents}
         </motion.p>
