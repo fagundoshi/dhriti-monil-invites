@@ -43,7 +43,7 @@ export const MainReveal = ({ showPetals = false }: Props) => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.9 }}
-          className="mt-2 font-display tracking-[0.25em] text-[11px] sm:text-xs text-ink-soft"
+          className="mt-3 font-display tracking-[0.25em] text-xs sm:text-sm text-maroon-deep font-semibold"
         >
           {wedding.brideParents}
         </motion.p>
@@ -73,7 +73,7 @@ export const MainReveal = ({ showPetals = false }: Props) => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.9 }}
-          className="mt-2 font-display tracking-[0.25em] text-[11px] sm:text-xs text-ink-soft"
+          className="mt-3 font-display tracking-[0.25em] text-xs sm:text-sm text-maroon-deep font-semibold"
         >
           {wedding.groomParents}
         </motion.p>
