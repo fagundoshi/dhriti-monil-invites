@@ -2,8 +2,16 @@
 export const wedding = {
   bride: "Dhriti",
   groom: "Monil",
+  brideParents: "D/o Nisha & Kalpesh Shah",
+  groomParents: "S/o Nisha & Kalpesh Shah",
   poeticLine: "Two souls, one journey — woven in love, blessed by tradition.",
   mainDate: "25th June 2026",
+  // Date parts for the three-circle scratch reveal
+  dateParts: {
+    day: "25",
+    month: "JUN",
+    year: "2026",
+  },
   hashtag: "#DhritiWedsMonil",
   events: [
     {
@@ -13,7 +21,7 @@ export const wedding = {
       time: "5:00 PM onwards",
       venue: "The Grand Lawn, Surat",
       mapUrl: "https://maps.google.com/?q=Surat",
-      color: "emerald",
+      blurb: "Henna, laughter and the first whispers of celebration.",
     },
     {
       name: "Mandap",
@@ -22,7 +30,7 @@ export const wedding = {
       time: "9:00 AM onwards",
       venue: "Shubh Banquet Hall, Surat",
       mapUrl: "https://maps.google.com/?q=Surat",
-      color: "gold",
+      blurb: "The sacred canopy is raised — rituals begin.",
     },
     {
       name: "Haldi",
@@ -31,7 +39,7 @@ export const wedding = {
       time: "11:00 AM onwards",
       venue: "Shubh Banquet Hall, Surat",
       mapUrl: "https://maps.google.com/?q=Surat",
-      color: "gold",
+      blurb: "Golden turmeric blessings for a radiant beginning.",
     },
     {
       name: "Mameru",
@@ -40,7 +48,7 @@ export const wedding = {
       time: "4:00 PM onwards",
       venue: "Shubh Banquet Hall, Surat",
       mapUrl: "https://maps.google.com/?q=Surat",
-      color: "peach",
+      blurb: "A heartfelt tradition of love from the maternal family.",
     },
     {
       name: "Sangeet",
@@ -49,7 +57,7 @@ export const wedding = {
       time: "7:30 PM onwards",
       venue: "Royal Garden Resort, Surat",
       mapUrl: "https://maps.google.com/?q=Surat",
-      color: "maroon",
+      blurb: "An evening of music, dance and joyful chaos.",
     },
     {
       name: "Wedding",
@@ -58,11 +66,17 @@ export const wedding = {
       time: "8:00 PM onwards",
       venue: "Heritage Palace Grounds, Surat",
       mapUrl: "https://maps.google.com/?q=Surat",
-      color: "maroon",
+      blurb: "Two hearts. Seven vows. A forever begins.",
     },
   ],
-  // Optional: replace with your own hosted audio URL
   musicUrl: "https://cdn.pixabay.com/download/audio/2022/10/30/audio_347a7869a4.mp3",
+  // EmailJS — replace these with your real keys from emailjs.com
+  emailjs: {
+    serviceId: "YOUR_SERVICE_ID",
+    templateId: "YOUR_TEMPLATE_ID",
+    publicKey: "YOUR_PUBLIC_KEY",
+    toEmail: "your@email.com",
+  },
 };
 
 export type WeddingEvent = (typeof wedding.events)[number];
