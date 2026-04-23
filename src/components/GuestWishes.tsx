@@ -27,11 +27,16 @@ export const GuestWishes = () => {
       return;
     }
 
-    const { serviceId, templateId, publicKey, toEmail } = wedding.emailjs;
+    // Prefer Vite env vars if present, fall back to wedding config
+    const serviceId = (import.meta.env.VITE_EMAILJS_SERVICE_ID as string) || wedding.emailjs.serviceId;
+    const templateId = (import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string) || wedding.emailjs.templateId;
+    const publicKey = (import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string) || wedding.emailjs.publicKey;
+    const toEmail = (import.meta.env.VITE_EMAILJS_TO_EMAIL as string) || wedding.emailjs.toEmail;
+
     const isConfigured =
-      serviceId &&
-      templateId &&
-      publicKey &&
+      !!serviceId &&
+      !!templateId &&
+      !!publicKey &&
       !serviceId.startsWith("YOUR_") &&
       !templateId.startsWith("YOUR_") &&
       !publicKey.startsWith("YOUR_");
