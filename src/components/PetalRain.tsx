@@ -64,7 +64,7 @@ export const PetalRain = ({ burst = true, scattered = 22 }: Props) => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-30 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 z-30 overflow-hidden pointer-events-none">
       <AnimatePresence>
         {petals.map((p) => (
           <motion.img
