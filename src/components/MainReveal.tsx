@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
 import { wedding } from "@/config/wedding";
 import brideGroom from "@/assets/bride-groom.png";
+import { PetalRain } from "./PetalRain";
 
-export const MainReveal = () => {
+interface Props {
+  showPetals?: boolean;
+}
+
+export const MainReveal = ({ showPetals = false }: Props) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
       <div className="absolute inset-0 bg-mandala" />
+      {showPetals && <PetalRain burst scattered={22} />}
 
       <div className="relative max-w-4xl mx-auto text-center">
         <motion.p
