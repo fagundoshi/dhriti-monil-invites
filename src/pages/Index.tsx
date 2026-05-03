@@ -4,8 +4,10 @@ import { Envelope } from "@/components/Envelope";
 import { MainReveal } from "@/components/MainReveal";
 import { TapReveal } from "@/components/TapReveal";
 import { Events } from "@/components/Events";
+import { FamilyNote } from "@/components/FamilyNote";
 import { MusicToggle } from "@/components/MusicToggle";
 import { GuestWishes } from "@/components/GuestWishes";
+import { Particles } from "@/components/Particles";
 import { wedding } from "@/config/wedding";
 import { subtleConfetti } from "@/lib/confetti";
 
@@ -14,7 +16,6 @@ const Index = () => {
 
   const handleOpen = () => {
     setOpened(true);
-    // gentle confetti when envelope opens
     setTimeout(() => subtleConfetti(), 400);
   };
 
@@ -24,7 +25,7 @@ const Index = () => {
         {!opened ? (
           <motion.div
             key="envelope"
-            exit={{ opacity: 0, scale: 1.1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: 0.8 }}
           >
             <Envelope onOpen={handleOpen} />
@@ -35,19 +36,26 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
+            className="relative"
           >
-            {/* Petals burst on landing/main reveal only */}
-            <MainReveal showPetals />
-            <TapReveal />
-            <Events />
-            <GuestWishes />
+            {/* Subtle ambient dust across the whole invitation */}
+            <div className="pointer-events-none fixed inset-0 z-0">
+              <Particles count={22} />
+            </div>
+
+            <div className="relative z-10">
+              <MainReveal showPetals />
+              <div className="bg-soft-2"><TapReveal /></div>
+              <Events />
+              <FamilyNote />
+              <div className="bg-soft-1"><GuestWishes /></div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
       {opened && <MusicToggle autoplay />}
 
-      {/* SEO h1 fallback for screen readers */}
       <h1 className="sr-only">
         {wedding.bride} &amp; {wedding.groom} Wedding Invitation — {wedding.mainDate}
       </h1>
