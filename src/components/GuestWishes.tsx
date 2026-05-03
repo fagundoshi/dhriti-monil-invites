@@ -82,11 +82,11 @@ export const GuestWishes = () => {
           className="text-center mb-10"
         >
           <p className="section-eyebrow mb-3">✦ A WORD FROM YOU ✦</p>
-          <h2 className="font-script text-5xl sm:text-6xl text-gold-gradient mb-3">
+          <h2 className="font-script text-5xl sm:text-6xl text-heading mb-3">
             Whispers &amp; Wishes
           </h2>
           <div className="gold-divider w-40 mx-auto" />
-          <p className="font-body text-lg text-maroon-deep/85 mt-5">
+          <p className="font-body text-lg text-ink/85 mt-5">
             Your blessings mean the world to us. Leave a little love below.
           </p>
         </motion.div>
@@ -114,15 +114,15 @@ export const GuestWishes = () => {
                 className="text-center py-8"
               >
                 <CheckCircle2 className="w-14 h-14 text-gold-dark mx-auto mb-4" />
-                <p className="font-script text-3xl text-maroon-deep mb-2">
-                  Thank you for your lovely wishes <Heart className="inline w-5 h-5 fill-current text-maroon" />
+                <p className="font-script text-3xl text-ink mb-2">
+                  Thank you for your lovely wishes <Heart className="inline w-5 h-5 fill-current text-heading" />
                 </p>
-                <p className="font-body text-maroon-deep/80">
+                <p className="font-body text-ink/80">
                   Your message has reached us — it means more than you know.
                 </p>
                 <button
                   onClick={() => setSent(false)}
-                  className="mt-6 font-display tracking-[0.2em] text-xs text-gold-dark hover:text-maroon-deep transition-colors"
+                  className="mt-6 font-display tracking-[0.2em] text-xs text-gold-dark hover:text-ink transition-colors"
                 >
                   ✦ SEND ANOTHER ✦
                 </button>
@@ -137,7 +137,7 @@ export const GuestWishes = () => {
                 className="space-y-5"
               >
                 <div>
-                  <label htmlFor="guest-name" className="block font-display tracking-[0.2em] text-[11px] text-maroon-deep mb-2">
+                  <label htmlFor="guest-name" className="block font-display tracking-[0.2em] text-[11px] text-ink mb-2">
                     YOUR NAME
                   </label>
                   <input
@@ -147,13 +147,13 @@ export const GuestWishes = () => {
                     onChange={(e) => setName(e.target.value)}
                     maxLength={80}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-ivory/70 border border-gold-dark/30 text-maroon-deep font-body text-base placeholder:text-maroon-deep/40 focus:outline-none focus:border-gold-dark focus:ring-2 focus:ring-gold/30 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-cream/80 border border-gold-dark/30 text-ink font-body text-base placeholder:text-ink/40 focus:outline-none focus:border-gold-dark focus:ring-2 focus:ring-gold/30 transition-all"
                     placeholder="e.g. Riya Patel"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="guest-message" className="block font-display tracking-[0.2em] text-[11px] text-maroon-deep mb-2">
+                  <label htmlFor="guest-message" className="block font-display tracking-[0.2em] text-[11px] text-ink mb-2">
                     YOUR WISHES
                   </label>
                   <textarea
@@ -163,10 +163,10 @@ export const GuestWishes = () => {
                     rows={4}
                     maxLength={500}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-ivory/70 border border-gold-dark/30 text-maroon-deep font-body text-base placeholder:text-maroon-deep/40 focus:outline-none focus:border-gold-dark focus:ring-2 focus:ring-gold/30 transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-cream/80 border border-gold-dark/30 text-ink font-body text-base placeholder:text-ink/40 focus:outline-none focus:border-gold-dark focus:ring-2 focus:ring-gold/30 transition-all resize-none"
                     placeholder="A heartfelt message for the couple…"
                   />
-                  <p className="text-right font-body text-xs text-maroon-deep/50 mt-1">
+                  <p className="text-right font-body text-xs text-ink/50 mt-1">
                     {message.length}/500
                   </p>
                 </div>
@@ -178,7 +178,7 @@ export const GuestWishes = () => {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-royal text-primary-foreground font-display text-xs tracking-[0.3em] shadow-gold transition-all duration-300 hover:scale-[1.02] hover:animate-glow-pulse disabled:opacity-60 disabled:hover:scale-100"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-terracotta text-primary-foreground font-display text-xs tracking-[0.3em] shadow-gold transition-all duration-300 hover:scale-[1.02] hover:animate-glow-pulse disabled:opacity-60 disabled:hover:scale-100"
                 >
                   <Send className="w-4 h-4" />
                   {sending ? "SENDING…" : "SEND WISHES"}

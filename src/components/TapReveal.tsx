@@ -39,11 +39,11 @@ const Coin = ({ label, value, onRevealed, delay = 0 }: CoinProps) => {
       <button
         onClick={handleReveal}
         aria-label={`Reveal ${label}`}
-        className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full shadow-royal overflow-hidden ring-2 ring-gold-dark/50 focus:outline-none focus:ring-4 focus:ring-gold/60 transition-transform active:scale-95"
+        className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full shadow-envelope overflow-hidden ring-2 ring-gold-dark/50 focus:outline-none focus:ring-4 focus:ring-gold/60 transition-transform active:scale-95"
       >
         {/* underlying value */}
-        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-ivory via-blush to-peach">
-          <span className="font-display font-bold text-3xl sm:text-4xl text-maroon-deep leading-none">
+        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-cream via-champagne to-champagne-soft">
+          <span className="font-display font-bold text-3xl sm:text-4xl text-ink leading-none">
             {value}
           </span>
         </div>
@@ -61,10 +61,10 @@ const Coin = ({ label, value, onRevealed, delay = 0 }: CoinProps) => {
                   "radial-gradient(circle at 35% 30%, hsl(45 90% 75%) 0%, hsl(43 80% 55%) 35%, hsl(38 75% 32%) 75%, hsl(28 70% 22%) 100%)",
               }}
             >
-              <span className="font-display font-semibold text-[11px] tracking-[0.2em] text-maroon-deep/90">
+              <span className="font-display font-semibold text-[11px] tracking-[0.2em] text-ink/90">
                 {label}
               </span>
-              <span className="font-body italic text-[11px] text-maroon-deep/80 mt-1">
+              <span className="font-body italic text-[11px] text-ink/80 mt-1">
                 tap
               </span>
               {/* shimmer */}
@@ -99,7 +99,7 @@ const Coin = ({ label, value, onRevealed, delay = 0 }: CoinProps) => {
           ))}
         </AnimatePresence>
       </button>
-      <p className="font-display tracking-[0.2em] text-[10px] text-maroon-deep font-semibold">
+      <p className="font-display tracking-[0.2em] text-[10px] text-ink font-semibold">
         {label}
       </p>
     </motion.div>
@@ -132,10 +132,10 @@ export const TapReveal = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="section-eyebrow mb-3">✦ SAVE OUR DAY ✦</p>
-          <h2 className="font-script text-5xl sm:text-6xl text-gold-gradient mb-3">
+          <h2 className="font-script text-5xl sm:text-6xl text-heading mb-3">
             Unveil the Date
           </h2>
-          <p className="font-body text-base text-maroon-deep mb-10 max-w-md mx-auto">
+          <p className="font-body text-base text-ink mb-10 max-w-md mx-auto">
             Tap each golden coin to reveal the day, month and year of our wedding.
           </p>
         </motion.div>
@@ -157,10 +157,10 @@ export const TapReveal = () => {
               className="mt-8"
             >
               <div className="gold-divider w-40 mx-auto mb-4" />
-              <p className="font-script text-3xl sm:text-4xl text-maroon-deep">
+              <p className="font-script text-3xl sm:text-4xl text-ink">
                 {wedding.bride} ♥ {wedding.groom}
               </p>
-              <p className="mt-2 font-body italic text-maroon-deep">
+              <p className="mt-2 font-body italic text-ink">
                 Mark your calendars — and your hearts.
               </p>
             </motion.div>
@@ -168,7 +168,7 @@ export const TapReveal = () => {
         </AnimatePresence>
 
         {!allRevealed && (
-          <p className="mt-6 font-body text-sm text-maroon-deep/80">
+          <p className="mt-6 font-body text-sm text-ink/80">
             {count} of 3 revealed
           </p>
         )}

@@ -1,6 +1,6 @@
 import confetti from "canvas-confetti";
 
-const warmColors = ["#c9302c", "#e3b94a", "#f5d97a", "#f4a576", "#8a1c1c"];
+const warmColors = ["#B58A49", "#E7D8C3", "#BE8A8A", "#A87454", "#7C4A4A"];
 
 export const subtleConfetti = () => {
   confetti({
