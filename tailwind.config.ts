@@ -50,14 +50,22 @@ export default {
           light: "hsl(var(--gold-light))",
           dark: "hsl(var(--gold-dark))",
         },
-        maroon: {
-          DEFAULT: "hsl(var(--maroon))",
-          deep: "hsl(var(--maroon-deep))",
-        },
-        blush: "hsl(var(--blush))",
-        peach: "hsl(var(--peach))",
         ivory: "hsl(var(--ivory))",
-        emerald: "hsl(var(--emerald))",
+        cream: "hsl(var(--cream))",
+        champagne: {
+          DEFAULT: "hsl(var(--champagne))",
+          soft: "hsl(var(--champagne-soft))",
+        },
+        terracotta: "hsl(var(--terracotta))",
+        rose: { dusty: "hsl(var(--rose-dusty))" },
+        heading: {
+          DEFAULT: "hsl(var(--heading))",
+          soft: "hsl(var(--heading-soft))",
+        },
+        ink: {
+          DEFAULT: "hsl(var(--ink))",
+          soft: "hsl(var(--ink-soft))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -70,11 +78,12 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-royal': 'var(--gradient-royal)',
         'gradient-gold': 'var(--gradient-gold)',
         'gradient-gold-shimmer': 'var(--gradient-gold-shimmer)',
-        'gradient-envelope': 'var(--gradient-envelope)',
+        'gradient-envelope-body': 'var(--gradient-envelope-body)',
+        'gradient-envelope-flap': 'var(--gradient-envelope-flap)',
         'gradient-card': 'var(--gradient-card)',
+        'gradient-terracotta': 'var(--gradient-terracotta)',
       },
       borderRadius: {
         lg: "var(--radius)",
