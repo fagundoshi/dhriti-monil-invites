@@ -43,7 +43,7 @@ export const MainReveal = ({ showPetals = false }: Props) => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.9 }}
-          className="mt-3 font-display tracking-[0.25em] text-xs sm:text-sm text-maroon-deep font-semibold"
+          className="mt-3 font-display tracking-[0.25em] text-xs sm:text-sm text-ink font-semibold"
         >
           {wedding.brideParents}
         </motion.p>
@@ -56,7 +56,7 @@ export const MainReveal = ({ showPetals = false }: Props) => {
           className="my-5 flex items-center justify-center gap-4"
         >
           <span className="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent to-gold-dark" />
-          <span className="font-script text-4xl sm:text-5xl text-maroon-deep">&amp;</span>
+          <span className="font-script text-4xl sm:text-5xl text-ink">&amp;</span>
           <span className="h-px w-16 sm:w-24 bg-gradient-to-l from-transparent to-gold-dark" />
         </motion.div>
 
@@ -73,7 +73,7 @@ export const MainReveal = ({ showPetals = false }: Props) => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.9 }}
-          className="mt-3 font-display tracking-[0.25em] text-xs sm:text-sm text-maroon-deep font-semibold"
+          className="mt-3 font-display tracking-[0.25em] text-xs sm:text-sm text-ink font-semibold"
         >
           {wedding.groomParents}
         </motion.p>
@@ -92,7 +92,7 @@ export const MainReveal = ({ showPetals = false }: Props) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.4, duration: 1 }}
-          className="mt-8 font-body italic text-lg sm:text-xl text-maroon-deep max-w-xl mx-auto leading-relaxed"
+          className="mt-8 font-body italic text-lg sm:text-xl text-ink max-w-xl mx-auto leading-relaxed"
         >
           “{wedding.poeticLine}”
         </motion.p>

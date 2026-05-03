@@ -26,7 +26,7 @@ export const Envelope = ({ onOpen }: Props) => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="mb-8 text-center font-display tracking-[0.4em] text-sm text-maroon/70"
+          className="mb-8 text-center font-display tracking-[0.4em] text-sm text-heading/70"
         >
           ✦ AN INVITATION ✦
         </motion.p>
@@ -40,7 +40,7 @@ export const Envelope = ({ onOpen }: Props) => {
           onClick={handleOpen}
         >
           {/* Envelope back */}
-          <div className="absolute inset-0 rounded-sm bg-gradient-envelope shadow-royal overflow-hidden">
+          <div className="absolute inset-0 rounded-sm bg-gradient-envelope-body shadow-envelope overflow-hidden">
             <div className="absolute inset-0 bg-mandala opacity-30" />
             {/* Inner glow border */}
             <div className="absolute inset-2 border border-gold/40 rounded-sm" />
@@ -67,8 +67,8 @@ export const Envelope = ({ onOpen }: Props) => {
             style={{
               height: "60%",
               clipPath: "polygon(0 0, 100% 0, 50% 100%)",
-              background: "var(--gradient-envelope)",
-              boxShadow: "0 4px 20px hsl(var(--maroon-deep) / 0.4)",
+              background: "var(--gradient-envelope-body)",
+              boxShadow: "0 4px 20px hsl(var(--ink) / 0.4)",
             }}
             animate={opened ? { rotateX: 180 } : { rotateX: 0 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -80,7 +80,7 @@ export const Envelope = ({ onOpen }: Props) => {
           <motion.img
             src={waxSeal}
             alt="D & M monogram seal"
-            className="absolute left-1/2 top-[60%] w-24 h-24 sm:w-28 sm:h-28 -translate-x-1/2 -translate-y-1/2 z-20 drop-shadow-[0_8px_20px_hsl(var(--maroon-deep)/0.6)]"
+            className="absolute left-1/2 top-[60%] w-24 h-24 sm:w-28 sm:h-28 -translate-x-1/2 -translate-y-1/2 z-20 drop-shadow-[0_8px_20px_hsl(var(--ink)/0.6)]"
             animate={opened ? { scale: 0, opacity: 0, rotate: 180 } : { scale: [1, 1.05, 1] }}
             transition={opened ? { duration: 0.6 } : { duration: 3, repeat: Infinity }}
           />
@@ -102,7 +102,7 @@ export const Envelope = ({ onOpen }: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 1 }}
-            className="mt-10 text-center font-script text-2xl text-maroon animate-pulse"
+            className="mt-10 text-center font-script text-2xl text-heading animate-pulse"
           >
             ✨ Tap to open ✨
           </motion.p>
