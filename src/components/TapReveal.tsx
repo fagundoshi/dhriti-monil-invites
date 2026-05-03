@@ -132,7 +132,7 @@ export const TapReveal = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="section-eyebrow mb-3">✦ SAVE OUR DAY ✦</p>
-          <h2 className="font-script text-5xl sm:text-6xl text-gold-gradient mb-3">
+          <h2 className="font-script text-5xl sm:text-6xl text-heading mb-3">
             Unveil the Date
           </h2>
           <p className="font-body text-base text-ink mb-10 max-w-md mx-auto">

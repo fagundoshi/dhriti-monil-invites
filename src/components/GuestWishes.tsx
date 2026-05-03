@@ -82,7 +82,7 @@ export const GuestWishes = () => {
           className="text-center mb-10"
         >
           <p className="section-eyebrow mb-3">✦ A WORD FROM YOU ✦</p>
-          <h2 className="font-script text-5xl sm:text-6xl text-gold-gradient mb-3">
+          <h2 className="font-script text-5xl sm:text-6xl text-heading mb-3">
             Whispers &amp; Wishes
           </h2>
           <div className="gold-divider w-40 mx-auto" />

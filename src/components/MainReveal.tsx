@@ -9,9 +9,9 @@ interface Props {
 
 export const MainReveal = ({ showPetals = false }: Props) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
+    <section className="ambient-glow relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
       <div className="absolute inset-0 bg-mandala" />
-      {showPetals && <PetalRain burst scattered={22} />}
+      {showPetals && <PetalRain burst scattered={18} />}
 
       <div className="relative max-w-4xl mx-auto text-center">
         <motion.p
