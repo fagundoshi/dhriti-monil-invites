@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Envelope } from "@/components/Envelope";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { MainReveal } from "@/components/MainReveal";
 import { TapReveal } from "@/components/TapReveal";
 import { Events } from "@/components/Events";
@@ -28,7 +28,7 @@ const Index = () => {
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: 0.8 }}
           >
-            <Envelope onOpen={handleOpen} />
+            <ScrollReveal onOpen={handleOpen} />
           </motion.div>
         ) : (
           <motion.div
