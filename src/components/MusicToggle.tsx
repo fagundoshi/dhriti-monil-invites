@@ -1,39 +1,46 @@
-import { useEffect, useRef, useState } from "react";
+"use client";
+
+import { useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import { wedding } from "@/config/wedding";
 
-export const MusicToggle = ({ autoplay }: { autoplay: boolean }) => {
+export const MusicToggle = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
 
-  useEffect(() => {
-    if (autoplay && audioRef.current) {
-      audioRef.current.volume = 0.4;
-      audioRef.current.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
-    }
-  }, [autoplay]);
-
-  const toggle = () => {
+  const toggle = async () => {
     const a = audioRef.current;
     if (!a) return;
-    if (playing) {
-      a.pause();
-      setPlaying(false);
-    } else {
-      a.volume = 0.4;
-      a.play().then(() => setPlaying(true)).catch(() => {});
+
+    try {
+      if (playing) {
+        a.pause();
+        setPlaying(false);
+      } else {
+        a.volume = 0.4;
+        await a.play();
+        setPlaying(true);
+      }
+    } catch (err) {
+      console.error("Playback failed:", err);
     }
   };
 
   return (
     <>
-      <audio ref={audioRef} src={wedding.musicUrl} loop preload="auto" />
+      <audio
+        ref={audioRef}
+        src={wedding.musicUrl}
+        loop
+        preload="auto"
+        playsInline
+      />
+
       <button
         onClick={toggle}
-        aria-label={playing ? "Mute music" : "Play music"}
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gradient-terracotta text-primary-foreground shadow-gold flex items-center justify-center transition-transform hover:scale-110 animate-glow-pulse"
+        className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full"
       >
-        {playing ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
+        {playing ? <Volume2 /> : <VolumeX />}
       </button>
     </>
   );

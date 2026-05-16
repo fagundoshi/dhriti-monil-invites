@@ -22,7 +22,7 @@ export const ScrollReveal = ({ onOpen }: Props) => {
     setTimeout(onOpen, reduce ? 600 : 4600);
   };
 
-  const closedH = 110;
+  const closedH = 10;
   const openH = 470;
   const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -354,31 +354,8 @@ export const ScrollReveal = ({ onOpen }: Props) => {
           >
             <Rod />
           </motion.div>
-
-          {/* SEAL */}
-          <AnimatePresence>
-            {!opened && (
-              <motion.div
-                key="seal"
-                className="absolute left-1/2 z-30"
-                style={{
-                  top: "calc(50% + 4px)",
-                  transform: "translate(-50%, -50%)",
-                  willChange: "transform, opacity",
-                }}
-                initial={{ scale: 0.5, opacity: 0, rotate: -12 }}
-                animate={{ scale: 1, opacity: 1, rotate: 0 }}
-                exit={{ scale: 1.25, opacity: 0, y: -40, rotate: 8 }}
-                transition={{ duration: 1.2, ease: EASE, delay: 0.9 }}
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                whileTap={{ scale: 0.96 }}
-              >
-                <Seal />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
-
+       </motion.div>
+       
         {/* Hint */}
         <AnimatePresence>
           {!opened && (
@@ -404,6 +381,27 @@ export const ScrollReveal = ({ onOpen }: Props) => {
           )}
         </AnimatePresence>
       </div>
+       {/* SEAL */}
+        <AnimatePresence>
+          {!opened && (
+            <motion.div
+              key="seal"
+              className="absolute"
+              style={{
+                top: "12%",
+                willChange: "transform, opacity",
+              }}
+              initial={{ scale: 0.5, opacity: 0, rotate: -12 }}
+              animate={{ scale: 1, opacity: 1, rotate: 0 }}
+              exit={{ scale: 1.25, opacity: 0, y: -40, rotate: 8 }}
+              transition={{ duration: 1.2, ease: EASE, delay: 0.9 }}
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              whileTap={{ scale: 0.96 }}
+            >
+              <Seal />
+            </motion.div>
+          )}
+        </AnimatePresence>
     </div>
   );
 };
@@ -472,7 +470,7 @@ const RevealContent = ({ active }: { active: boolean }) => {
         className="mt-3 font-serif-d text-[10px] tracking-[0.4em]"
         style={{ color: "#9A6F4E" }}
       >
-        25 · 06 · 2026
+        ✦ INVITE YOU ✦
       </motion.p>
     </div>
   );
